@@ -24,12 +24,7 @@ To get All vessels use
 - Combined IUU use http://your_domain.com/iuu/iuu.php
 
 ###Greenpeace Setup
-Note that for greenpeace you will need this Bash Script to scap the website as their site has blocks setup. Instead 
-- copy and paste the file into your linux environment 
-- make it executable 
-- and set up a CRON job to run it periodically 
-
-What this will do is download the webpages and store them in the list directory. These files will then be used by the greenpeace.php script to covert the HTML Webpages into an API.
+Note that for greenpeace you will need this Bash Script to scrap their website
 
 ```
                     ----------------------
@@ -50,3 +45,12 @@ What this will do is download the webpages and store them in the list directory.
 
                     echo "`date -u` `usr/local/bin/get_iuu`" >> /var/www/iuu/logfile.txt
 ```
+Greenpeace has blocks setup for bots/scrappers and the like. So instead use the bash script to download the files once to your system and then work from there.
+
+#Instructions for Bash Script:
+
+- copy and paste the script above into your linux environment 
+- make it executable 
+- set up a CRON job to run it periodically 
+
+What this will do is download the webpages at the times you configured in CRON and store them in the **list** directory. These files will then be used by the greenpeace.php script to covert the HTML Webpages into an API.
